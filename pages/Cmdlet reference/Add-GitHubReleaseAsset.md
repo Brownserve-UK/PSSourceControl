@@ -1,6 +1,6 @@
 ---
-external help file: Brownserve.PSTools-help.xml
-Module Name: Brownserve.PSTools
+external help file: Brownserve.PSSourceControl-help.xml
+Module Name: Brownserve.PSSourceControl
 online version:
 schema: 2.0.0
 ---
