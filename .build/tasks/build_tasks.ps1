@@ -85,11 +85,11 @@ param
 
     # The GitHub repo to publish the release to and used to fill in release details for Nuget/PSGallery
     [Parameter(
-        Mandatory = $true
+        Mandatory = $false
     )]
     [ValidateNotNullOrEmpty()]
     [string]
-    $GitHubRepoName,
+    $GitHubRepoName = $Global:BrownserveRepoName,
 
     # GitHub token used during the StageRelease build, must have the following permissions:
     #   * Read/Write pull requests
@@ -128,6 +128,11 @@ param
     [hashtable[]]
     $CustomNugetFeeds
 )
+# Just in case...
+if (!$GitHubRepoName)
+{
+    throw 'GitHubRepoName not set'
+}
 # Set up a bunch of variables that we'll use through the build, some of these are global as they're used in our tests too
 $global:BrownserveBuiltModuleDirectory = Join-Path $global:BrownserveRepoBuildOutputDirectory $ModuleName
 # Depending on how we got the branch name we may need to remove the full ref
@@ -716,10 +721,11 @@ You may wish to run _init.ps1 again to reload the current stable version of this
 task UpdateModuleDocumentation ImportModule, {
     Write-Build White 'Updating markdown documentation'
     $DocsParams = @{
-        ModuleName        = $ModuleName
-        ModulePath        = $Script:BuiltModulePath
-        DocumentationPath = $Global:BrownserveRepoDocsDirectory
-        ModuleGUID        = $ModuleGUID
+        ModuleName           = $ModuleName
+        ModulePath           = $Script:BuiltModulePath
+        DocumentationPath    = $Global:BrownserveRepoDocsDirectory
+        ModuleGUID           = $ModuleGUID
+        NoModuleSubdirectory = $true
     }
     # When we're preparing to release a new version then we should update the help version in the module page
     if ($script:Stage -eq $true)
@@ -732,7 +738,7 @@ task UpdateModuleDocumentation ImportModule, {
         We do this _after_ we've generated the docs as the module page might not exist before which will cause
         Resolve-Path to fail.
     #>
-    $Script:ModulePagePath = Join-Path $Global:BrownserveRepoDocsDirectory "$ModuleName.md" | Resolve-Path
+    $Script:ModulePagePath = Join-Path $Global:BrownserveRepoDocsDirectory 'Commands.md' | Resolve-Path
     if ($script:Stage -eq $true)
     {
         $script:TrackedFiles += ($Script:ModulePagePath | Convert-Path)
@@ -752,7 +758,7 @@ task CreateModuleHelp UpdateModuleDocumentation, {
     New-Item (Join-Path $global:BrownserveBuiltModuleDirectory 'en-US') -ItemType Directory | Out-Null
     $HelpParams = @{
         ModuleDirectory   = $global:BrownserveBuiltModuleDirectory
-        DocumentationPath = (Join-Path $global:BrownserveRepoDocsDirectory $ModuleName)
+        DocumentationPath = $global:BrownserveRepoDocsDirectory
     }
     Add-ModuleHelp @HelpParams | Out-Null
 }
