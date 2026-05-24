@@ -31,7 +31,7 @@ jobs:
       - name: checkout-module
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
         with:
-          path: Brownserve.PSSourceControl
+          path: PSSourceControl
           # We need to fetch the full history so that we can determine the changelog entries from the previous release
           fetch-depth: 0
           token: ${{ steps.app-token.outputs.token }}
@@ -43,10 +43,10 @@ jobs:
         run: |
             $Params = @{
               BranchName = $env:GITHUB_REF
-              GitHubRepoName = 'Brownserve.PSSourceControl'
+              GitHubRepoName = 'PSSourceControl'
               Build = 'StageRelease'
               GitHubStageReleaseToken = $env:GitHubPAT
               ReleaseType = '${{ inputs.release_type}}'
               Verbose = $true
             }
-            ./Brownserve.PSSourceControl/.build/build.ps1 @Params
+            ./PSSourceControl/.build/build.ps1 @Params
