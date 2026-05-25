@@ -1,11 +1,12 @@
 {
   "Name": "Brownserve.PSSourceControl",
-  "Description": "TBD",
+  "Description": "Git and GitHub source control operations used across Brownserve projects.",
   "GUID": "e3a196ac-b966-4702-85ba-483d911fd386",
   "Tags": [
     "Brownserve-UK",
     "VCS",
     "git",
     "github"
-  ]
+  ],
+  "RequiredModules": ["Brownserve.PSCommon"]
 }
