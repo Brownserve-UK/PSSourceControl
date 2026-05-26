@@ -3,6 +3,7 @@
     Source control helpers for Git and GitHub used across Brownserve PowerShell modules and projects.
 #>
 #Requires -Version 6.0
+#Requires -Module Brownserve.PSCommon
 [CmdletBinding()]
 param()
 $ErrorActionPreference = 'Stop'
