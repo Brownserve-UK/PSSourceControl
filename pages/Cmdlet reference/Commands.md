@@ -98,6 +98,10 @@ Creates a release on GitHub
 
 Pushes local git changes to the remote repository.
 
+### [Set-GitLabCIVariable](Set-GitLabCIVariable.md)
+
+Creates or updates a GitLab CI/CD variable.
+
 ### [Submit-GitChanges](Submit-GitChanges.md)
 
 This cmdlet is a wrapper for \<git commit\>.
