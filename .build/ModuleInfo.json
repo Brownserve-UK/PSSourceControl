@@ -1,6 +1,6 @@
 {
   "Name": "Brownserve.PSSourceControl",
-  "Description": "Git and GitHub source control operations used across Brownserve projects.",
+  "Description": "Git, GitHub, and GitLab source control operations used across Brownserve projects.",
   "GUID": "e3a196ac-b966-4702-85ba-483d911fd386",
   "Tags": [
     "Brownserve-UK",
