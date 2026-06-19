@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Release
 
+## [v0.3.0](https://github.com/Brownserve-UK/PSSourceControl/tree/v0.3.0) (2026-06-19)
+
+### Fixed
+
+- fix: change method for uploading GitHub release assets. in [#13](https://github.com/Brownserve-UK/PSSourceControl/pull/13) by [@shoddyguard](https://github.com/shoddyguard)
+
+
 ## [v0.2.0](https://github.com/Brownserve-UK/PSSourceControl/tree/v0.2.0) (2026-06-19)
 
 ### Added
