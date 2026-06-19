@@ -2,7 +2,7 @@
 Module Name: Brownserve.PSSourceControl
 Module Guid: e3a196ac-b966-4702-85ba-483d911fd386
 Download Help Link: https://docs.brownserve.co.uk/Brownserve.PSSourceControl/Cmdlet%20reference/Commands/
-Help Version: 0.2.0
+Help Version: 0.3.0
 Locale: en-US
 ---
 
