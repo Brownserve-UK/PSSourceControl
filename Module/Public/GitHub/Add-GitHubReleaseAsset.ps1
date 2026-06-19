@@ -71,11 +71,7 @@ function Add-GitHubReleaseAsset
             'Content-Type'         = 'application/octet-stream' #TODO: Should this be hardcoded?
         }
 
-        try
-        {
-            $FileToUpload = Get-Item $FilePath -Force -ErrorAction Stop
-        }
-        catch
+        if (!(Test-Path $FilePath -PathType Leaf))
         {
             throw "Unable to find file '$FilePath'."
         }
@@ -94,13 +90,9 @@ function Add-GitHubReleaseAsset
         {
             $UploadUrl += "&label=$AssetLabel"
         }
-        $Form = @{
-            file = $FileToUpload
-        }
-
         try
         {
-            $Result = Invoke-RestMethod -Uri $UploadUrl -Method Post -Headers $Headers -Form $Form -ErrorAction Stop
+            $Result = Invoke-RestMethod -Uri $UploadUrl -Method Post -Headers $Headers -InFile $FilePath -ErrorAction Stop
         }
         catch
         {
