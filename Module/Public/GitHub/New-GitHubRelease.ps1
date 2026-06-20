@@ -65,7 +65,14 @@ function New-GitHubRelease
             Mandatory = $false
         )]
         [string]
-        $TargetCommit
+        $TargetCommit,
+
+        # Create the release as a draft (not publicly visible until published)
+        [Parameter(
+            Mandatory = $false
+        )]
+        [switch]
+        $Draft
     )
     begin {}
     process
@@ -91,6 +98,10 @@ function New-GitHubRelease
         if ($TargetCommit)
         {
             $Body.Add('target_commitish', $TargetCommit)
+        }
+        if ($Draft)
+        {
+            $Body.Add('draft', $true)
         }
         try
         {
