@@ -2,110 +2,114 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://docs.brownserve.co.uk/Brownserve.PSSourceControl/</loc>
-         <lastmod>2026-06-19</lastmod>
+         <lastmod>2026-06-20</lastmod>
     </url>
     <url>
          <loc>https://docs.brownserve.co.uk/Brownserve.PSSourceControl/getting-started/</loc>
-         <lastmod>2026-06-19</lastmod>
+         <lastmod>2026-06-20</lastmod>
     </url>
     <url>
          <loc>https://docs.brownserve.co.uk/Brownserve.PSSourceControl/Cmdlet%20reference/Add-GitChanges/</loc>
-         <lastmod>2026-06-19</lastmod>
+         <lastmod>2026-06-20</lastmod>
     </url>
     <url>
          <loc>https://docs.brownserve.co.uk/Brownserve.PSSourceControl/Cmdlet%20reference/Add-GitHubReleaseAsset/</loc>
-         <lastmod>2026-06-19</lastmod>
+         <lastmod>2026-06-20</lastmod>
     </url>
     <url>
          <loc>https://docs.brownserve.co.uk/Brownserve.PSSourceControl/Cmdlet%20reference/Add-PullRequestComment/</loc>
-         <lastmod>2026-06-19</lastmod>
+         <lastmod>2026-06-20</lastmod>
     </url>
     <url>
          <loc>https://docs.brownserve.co.uk/Brownserve.PSSourceControl/Cmdlet%20reference/Commands/</loc>
-         <lastmod>2026-06-19</lastmod>
+         <lastmod>2026-06-20</lastmod>
     </url>
     <url>
          <loc>https://docs.brownserve.co.uk/Brownserve.PSSourceControl/Cmdlet%20reference/ConvertTo-HTTPSRepoURL/</loc>
-         <lastmod>2026-06-19</lastmod>
+         <lastmod>2026-06-20</lastmod>
     </url>
     <url>
          <loc>https://docs.brownserve.co.uk/Brownserve.PSSourceControl/Cmdlet%20reference/Copy-GitRemoteRepository/</loc>
-         <lastmod>2026-06-19</lastmod>
+         <lastmod>2026-06-20</lastmod>
     </url>
     <url>
          <loc>https://docs.brownserve.co.uk/Brownserve.PSSourceControl/Cmdlet%20reference/Get-GitBranches/</loc>
-         <lastmod>2026-06-19</lastmod>
+         <lastmod>2026-06-20</lastmod>
     </url>
     <url>
          <loc>https://docs.brownserve.co.uk/Brownserve.PSSourceControl/Cmdlet%20reference/Get-GitChanges/</loc>
-         <lastmod>2026-06-19</lastmod>
+         <lastmod>2026-06-20</lastmod>
     </url>
     <url>
          <loc>https://docs.brownserve.co.uk/Brownserve.PSSourceControl/Cmdlet%20reference/Get-GitCurrentBranch/</loc>
-         <lastmod>2026-06-19</lastmod>
+         <lastmod>2026-06-20</lastmod>
     </url>
     <url>
          <loc>https://docs.brownserve.co.uk/Brownserve.PSSourceControl/Cmdlet%20reference/Get-GitHubIssues/</loc>
-         <lastmod>2026-06-19</lastmod>
+         <lastmod>2026-06-20</lastmod>
     </url>
     <url>
          <loc>https://docs.brownserve.co.uk/Brownserve.PSSourceControl/Cmdlet%20reference/Get-GitHubPullRequests/</loc>
-         <lastmod>2026-06-19</lastmod>
+         <lastmod>2026-06-20</lastmod>
     </url>
     <url>
          <loc>https://docs.brownserve.co.uk/Brownserve.PSSourceControl/Cmdlet%20reference/Get-GitHubRelease/</loc>
-         <lastmod>2026-06-19</lastmod>
+         <lastmod>2026-06-20</lastmod>
     </url>
     <url>
          <loc>https://docs.brownserve.co.uk/Brownserve.PSSourceControl/Cmdlet%20reference/Get-GitHubTags/</loc>
-         <lastmod>2026-06-19</lastmod>
+         <lastmod>2026-06-20</lastmod>
     </url>
     <url>
          <loc>https://docs.brownserve.co.uk/Brownserve.PSSourceControl/Cmdlet%20reference/Get-GitMerges/</loc>
-         <lastmod>2026-06-19</lastmod>
+         <lastmod>2026-06-20</lastmod>
     </url>
     <url>
          <loc>https://docs.brownserve.co.uk/Brownserve.PSSourceControl/Cmdlet%20reference/Get-GitRemoteOriginURL/</loc>
-         <lastmod>2026-06-19</lastmod>
+         <lastmod>2026-06-20</lastmod>
     </url>
     <url>
          <loc>https://docs.brownserve.co.uk/Brownserve.PSSourceControl/Cmdlet%20reference/Get-GitRootDirectory/</loc>
-         <lastmod>2026-06-19</lastmod>
+         <lastmod>2026-06-20</lastmod>
     </url>
     <url>
          <loc>https://docs.brownserve.co.uk/Brownserve.PSSourceControl/Cmdlet%20reference/New-GitBranch/</loc>
-         <lastmod>2026-06-19</lastmod>
+         <lastmod>2026-06-20</lastmod>
     </url>
     <url>
          <loc>https://docs.brownserve.co.uk/Brownserve.PSSourceControl/Cmdlet%20reference/New-GitHubBranch/</loc>
-         <lastmod>2026-06-19</lastmod>
+         <lastmod>2026-06-20</lastmod>
     </url>
     <url>
          <loc>https://docs.brownserve.co.uk/Brownserve.PSSourceControl/Cmdlet%20reference/New-GitHubCommit/</loc>
-         <lastmod>2026-06-19</lastmod>
+         <lastmod>2026-06-20</lastmod>
     </url>
     <url>
          <loc>https://docs.brownserve.co.uk/Brownserve.PSSourceControl/Cmdlet%20reference/New-GitHubPullRequest/</loc>
-         <lastmod>2026-06-19</lastmod>
+         <lastmod>2026-06-20</lastmod>
     </url>
     <url>
          <loc>https://docs.brownserve.co.uk/Brownserve.PSSourceControl/Cmdlet%20reference/New-GitHubRelease/</loc>
-         <lastmod>2026-06-19</lastmod>
+         <lastmod>2026-06-20</lastmod>
     </url>
     <url>
          <loc>https://docs.brownserve.co.uk/Brownserve.PSSourceControl/Cmdlet%20reference/Push-GitChanges/</loc>
-         <lastmod>2026-06-19</lastmod>
+         <lastmod>2026-06-20</lastmod>
     </url>
     <url>
          <loc>https://docs.brownserve.co.uk/Brownserve.PSSourceControl/Cmdlet%20reference/Set-GitLabCIVariable/</loc>
-         <lastmod>2026-06-19</lastmod>
+         <lastmod>2026-06-20</lastmod>
     </url>
     <url>
          <loc>https://docs.brownserve.co.uk/Brownserve.PSSourceControl/Cmdlet%20reference/Submit-GitChanges/</loc>
-         <lastmod>2026-06-19</lastmod>
+         <lastmod>2026-06-20</lastmod>
     </url>
     <url>
          <loc>https://docs.brownserve.co.uk/Brownserve.PSSourceControl/Cmdlet%20reference/Switch-GitBranch/</loc>
-         <lastmod>2026-06-19</lastmod>
+         <lastmod>2026-06-20</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.brownserve.co.uk/Brownserve.PSSourceControl/Cmdlet%20reference/Update-GitHubRelease/</loc>
+         <lastmod>2026-06-20</lastmod>
     </url>
 </urlset>
