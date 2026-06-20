@@ -109,3 +109,7 @@ This cmdlet is a wrapper for \<git commit\>.
 ### [Switch-GitBranch](Switch-GitBranch.md)
 
 Checks out a given branch.
+
+### [Update-GitHubRelease](Update-GitHubRelease.md)
+
+Updates properties of an existing GitHub release.

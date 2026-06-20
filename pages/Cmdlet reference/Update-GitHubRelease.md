@@ -5,50 +5,128 @@ online version:
 schema: 2.0.0
 ---
 
-# New-GitHubRelease
+# Update-GitHubRelease
 
 ## SYNOPSIS
 
-Creates a release on GitHub
+Updates properties of an existing GitHub release.
 
 ## SYNTAX
 
 ```text
-New-GitHubRelease [-Name] <String> [-Tag] <String> [-Description] <String> [-RepositoryName] <String>
- [-RepositoryOwner] <String> -Token <String> [-Prerelease] [-TargetCommit <String>] [-Draft]
+Update-GitHubRelease [-ReleaseId] <Int64> [-RepositoryName] <String> [-RepositoryOwner] <String>
+ -Token <String> [-Draft <Boolean>] [-Name <String>] [-Description <String>]
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-Creates a release on GitHub
+Updates properties of an existing GitHub release via the GitHub API.
+Commonly used to publish a draft release after all assets have been uploaded.
 
 ## EXAMPLES
 
-### EXAMPLE 1
+### Example 1: Publish a draft release
 
 ```powershell
-New-GitHubRelease `
-    -Name "Version 1.0.0" `
-    -Tag "v1.0.0" `
-    -Description "This is the first release" `
-    -RepoName "MyRepo" `
-    -GitHubOrg "Acme" `
-    -GitHubToken "my-token" `
+$Release = New-GitHubRelease `
+    -Name            'v1.2.0' `
+    -Tag             'v1.2.0' `
+    -Description     'Release notes here' `
+    -RepositoryName  'MyRepo' `
+    -RepositoryOwner 'MyOrg' `
+    -Token           $token `
+    -Draft
+
+Add-GitHubReleaseAsset `
+    -UploadUrl $Release.upload_url `
+    -FilePath  'C:\artifacts\myapp-v1.2.0-x86_64-unknown-linux-gnu.tar.gz' `
+    -Token     $token
+
+Update-GitHubRelease `
+    -ReleaseId       $Release.id `
+    -RepositoryName  'MyRepo' `
+    -RepositoryOwner 'MyOrg' `
+    -Token           $token `
+    -Draft           $false
 ```
 
-This would create a release called "Version 1.0.0" with a tag of "v1.0.0"
+Creates a draft release, uploads an asset, then publishes the release.
 
 ## PARAMETERS
 
 ### -Description
 
-The description for this release
+Updated release description/body
 
 ```yaml
 Type: String
 Parameter Sets: (All)
 Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Draft
+
+Set to $false to publish a draft release, $true to convert back to draft
+
+```yaml
+Type: Boolean
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Name
+
+Updated release name
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ReleaseId
+
+The numeric ID of the release to update (returned by New-GitHubRelease as .id)
+
+```yaml
+Type: Int64
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 1
+Default value: 0
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -RepositoryName
+
+The GitHub repo the release belongs to
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases: RepoName
 
 Required: True
 Position: 2
@@ -57,62 +135,14 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Draft
+### -RepositoryOwner
 
-If `$true`, this will create a draft release
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Name
-
-The name of the release
+The owner/organisation of the repo
 
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases:
-
-Required: True
-Position: 0
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Prerelease
-
-Set if this is a prerelease
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -RepositoryName
-
-The name of the repository to create the release in
-
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases: RepoName
+Aliases: GitHubOrganisation, GitHubOrganization, GitHubOrg
 
 Required: True
 Position: 3
@@ -121,57 +151,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -RepositoryOwner
-
-The owner of the repository to create the release in
-
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases: GitHubOrganisation, GitHubOrganization, GitHubOrg
-
-Required: True
-Position: 4
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Tag
-
-The tag to use for the release, should not contain any whitespace.
-
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases:
-
-Required: True
-Position: 1
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -TargetCommit
-
-The target commitish to use (if any)
-
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Token
 
-The GitHub PAT
+The PAT to access the repo
 
 ```yaml
 Type: String
@@ -191,11 +173,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### None
-
 ## OUTPUTS
-
-### System.Object
 
 ## NOTES
 
